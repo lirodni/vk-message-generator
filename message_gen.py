@@ -7,11 +7,7 @@ class Message_generator:
     
     def __init__(self):
 
-        with open('pswd.txt', 'r') as f:
-
-        #self._log, self._pswd = input('Input login and password: ').split()
-
-            self._log, self._pswd = f.read().split()
+        self._log, self._pswd = input('Input login and password: ').split()
         
         self.api = vk_requests.create_api(app_id=5939164, login=self._log, password=self._pswd, scope=['messages'])
 
